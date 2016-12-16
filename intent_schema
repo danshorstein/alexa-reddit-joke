@@ -1,0 +1,17 @@
+{
+
+    "intents": [{
+
+        "intent": "JokeType",
+
+        "slots": [{
+
+            "name": "joke_type",
+
+            "type": "CLEAN_OR_DIRTY"
+
+        }]
+
+    }]
+
+}
