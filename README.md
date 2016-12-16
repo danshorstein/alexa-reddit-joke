@@ -2,10 +2,19 @@
 
 I wrote this little Amazon Alexa app using https://developer.amazon.com/blogs/post/Tx14R0IYYGH3SKT/Flask-Ask-A-New-Python-Framework-for-Rapid-Alexa-Skills-Kit-Development as a guide.
 
-If you want to use it, you'll have to follow the instructions on the above link to sign up as an Amazon developer and 
+There are two versions. 
+
+clean_or_dirty - The first one you can only search for "Clean" or "Dirty" jokes. However please note
+that most of the "clean" jokes are actually dirty anyways. These come from /r/Jokes, which has jokes of all levels of appropriateness.
+
+joke_search - This newer and more awesome search lets you search for ANY one or two word search term. It's pretty fantastic. However, please note that after February, this will not be as easily implemented, as Amazon will be stopping the ability to use slot types of AMAZON.LITERAL, which allows you to say anything. Instead you will have to supply a list of words that it will accept. See http://tinyurl.com/jo6ygmf for more details.
+
+This is not difficult to add to your own Alexa! Just follow the instructions on the above link to sign up as an Amazon developer and 
 download ngrok etc.
 
-You'll also need to pip install flask, flask-ask, and praw. 
+This was designed in Python 3, and I have no idea if it works in Python 2.
+
+You'll need to pip install flask, flask-ask, and praw. 
 
 ## For the reddit API wrapper you'll need to go on Reddit and sign up for their API.  To do so:
 
