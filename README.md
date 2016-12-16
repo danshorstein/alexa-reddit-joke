@@ -26,10 +26,10 @@ You'll need to pip install flask, flask-ask, and praw.
 
 ## Amazon App details
 
-* Invocation name, I used "reddit joke"
-* Interaction model - just copy and paste from the file of that name in this github
+* Invocation name, I used "reddit joke" but use whatever you like
+* Interaction model - copy and paste from the file "intent_schema"
 * For the clean_or_dirty only:  Custom Slot Types - create one that looks like this: Type: CLEAN_OR_DIRTY	 Values: clean | dirty
-* Sample utterances - same, copy and paste from the file in this github. feel free to add more.
+* Sample utterances - copy and paste from the file. The more you add, the better it will respond to variations.
 
 
 It should go something like this:
