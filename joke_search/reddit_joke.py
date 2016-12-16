@@ -1,7 +1,7 @@
 import logging
 from flask import Flask
 from flask_ask import Ask, statement, question, session
-import reddit_play
+import reddit_search
 import random
 
 app = Flask(__name__)
@@ -24,12 +24,11 @@ def tell_joke(joke_type):
         if joke_type is None:
             joke_type = random.choice(random_topics)
             msg = "I couldn't understand you, so instead I'll tell you a joke about {}..... ".format(joke_type)
-            jokehead, joke = reddit_play.get_joke(joke_type)
 
         else:
             msg = 'Ok, get ready for a joke about {}..... '.format(joke_type)
-            jokehead, joke = reddit_play.get_joke(joke_type)
 
+        jokehead, joke = reddit_search.get_joke(joke_type)
         msg = msg + jokehead + '...' + joke
         return statement(msg)
     except Exception as e:
