@@ -28,9 +28,7 @@ You'll need to pip install flask, flask-ask, and praw.
 
 * Invocation name, I used "reddit joke"
 * Interaction model - just copy and paste from the file of that name in this github
-* Custom Slot Types - create one that looks like this: 
-  Type: CLEAN_OR_DIRTY	
-  Values: clean | dirty
+* For the clean_or_dirty only:  Custom Slot Types - create one that looks like this: Type: CLEAN_OR_DIRTY	 Values: clean | dirty
 * Sample utterances - same, copy and paste from the file in this github. feel free to add more.
 
 
