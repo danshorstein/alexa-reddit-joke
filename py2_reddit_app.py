@@ -26,22 +26,26 @@ def tell_joke(joke_type):
         if joke_type is None:
             joke_type = random.choice(random_topics)
             jokehead, joke, joke_type = reddit_play.get_joke(joke_type)
+            joke_type = joke_type
             msg = "I couldn't understand you, so instead I'll tell you a joke about {}..... ".format(joke_type)
 
 
         else:
             jokehead, joke, joke_type = reddit_play.get_joke(joke_type)
+            joke_type = joke_type
             msg1 = 'Ok, get ready for a joke about {}..... '.format(joke_type)
             msg2 = 'All right, here is one of my favorite jokes about {}..... '.format(joke_type)
             msg3 = 'Ready or not, here comes a joke about {}..... '.format(joke_type)
             msg = random.choice([msg1, msg2, msg3])
 
         msg = msg + jokehead + '...' + joke
-        return statement(msg).simple_card('Jokebox', msg)
+        msg2 = msg.lower().replace('shit', 'sh-it').replace('fuck', 'fu-ck').replace('asshole', 'ass hole').replace('..', '.. ').replace('http://','').replace('https://','')
+        return statement(msg2).simple_card('Jokebox', msg)
 
-    except:
+    except Exception as e:
         msg = "Unfortunately I don't feel very funny today. Please try again later!"
         return statement(msg).simple_card('Jokebox', msg)
+        print("Error!".format(e))
 
 
 @ask.intent('AMAZON.HelpIntent')
@@ -68,6 +72,6 @@ def cancel():
 
 
 if __name__ == '__main__':
-    print(ask_joke_type().__dict__)
-    print(tell_joke('asshole').__dict__)
-    # app.run(debug=True)
+    # print(ask_joke_type().__dict__)
+    # print(tell_joke('asshole').__dict__)
+    app.run(debug=True)
