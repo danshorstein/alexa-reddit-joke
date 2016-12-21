@@ -1,3 +1,8 @@
+# Password file
+passwords.py
+reddit3
+templates
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
