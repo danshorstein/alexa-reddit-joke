@@ -32,8 +32,8 @@ def tell_joke(joke_type):
         else:
             jokehead, joke, joke_type = reddit_play.get_joke(joke_type)
             msg1 = 'Ok, get ready for a joke about {}..... '.format(joke_type)
-            msg2 = 'All right, here is one of my favorite {} jokes..... '.format(joke_type)
-            msg3 = 'Ready or not, here comes a jokea bout {}..... '.format(joke_type)
+            msg2 = 'All right, here is one of my favorite jokes about {}..... '.format(joke_type)
+            msg3 = 'Ready or not, here comes a joke about {}..... '.format(joke_type)
             msg = random.choice([msg1, msg2, msg3])
 
         msg = msg + jokehead + '...' + joke
@@ -57,13 +57,13 @@ def help():
 
 @ask.intent('AMAZON.StopIntent')
 def stop():
-    msg = 'Later dude!'
+    msg = 'Smell you later!'
     return statement(msg)
 
 
 @ask.intent('AMAZON.CancelIntent')
 def cancel():
-    msg = 'Later dude!'
+    msg = 'Smell you later!'
     return statement(msg)
 
 

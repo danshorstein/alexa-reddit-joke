@@ -22,7 +22,7 @@ def get_joke(joke_type):
 
         print('We found a total of {} jokes about {}.'.format(len(joke_list), joke_type))
 
-        return joke.title.replace('\n','.'), joke.selftext.replace('\\','.'), joke_type
+        return joke.title.replace('\n','.'), joke.selftext.replace('\n','.'), joke_type
 
     except Exception as e:
         return "Whoops, something went wrong. Try again real soon! ".format(e), "Goodbye!"
