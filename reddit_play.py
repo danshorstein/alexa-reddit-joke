@@ -6,7 +6,7 @@ def get_joke(joke_type):
     try:
         reddit = connect_to_reddit()
         joke_list = []
-#        for subreddit in ['shortcleanfunny', 'cleanjokes', 'badjokes', 'dadjokes', 'puns', 'jokes]:
+
         for subreddit in ['dadjokes', 'cleanjokes', 'jokes']:
             joke_list.extend(list(reddit.subreddit(subreddit).search(joke_type, limit=10)))
             if len(joke_list)>=30:
@@ -37,8 +37,5 @@ def connect_to_reddit():
 
 if __name__ == '__main__':
     joke=get_joke('poop')
-    print()
     print(joke[0])
-    print()
     print(joke[1])
-    print()

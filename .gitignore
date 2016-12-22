@@ -1,8 +1,8 @@
-# Password file
 passwords.py
 reddit3
 templates
 reddit
+*.pyc
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

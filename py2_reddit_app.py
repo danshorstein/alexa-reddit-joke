@@ -73,5 +73,5 @@ def cancel():
 
 if __name__ == '__main__':
     # print(ask_joke_type().__dict__)
-    # print(tell_joke('asshole').__dict__)
+    # print(tell_joke('toilet').__dict__)
     app.run(debug=True)
