@@ -5,12 +5,12 @@ from passwords import CLIENT_ID, CLIENT_SECRET, USER_AGENT
 def get_joke(joke_type):
     try:
         reddit = connect_to_reddit()
-        joke_list = []
+        joke_list = list(reddit.subreddit('jokes').search(joke_type, limit=30))
 
-        for subreddit in ['dadjokes', 'cleanjokes', 'jokes']:
-            joke_list.extend(list(reddit.subreddit(subreddit).search(joke_type, limit=10)))
-            if len(joke_list)>=30:
-                break
+        #for subreddit in ['jokes']: #, 'dadjokes', 'cleanjokes'
+        #    joke_list.extend(list(reddit.subreddit(subreddit).search(joke_type, limit=50)))
+        #    if len(joke_list)>=5:
+        #        break
 
         if not joke_list:
             new_type = random.choice(['cows', 'dogs', 'cats', 'bees'])
@@ -18,9 +18,9 @@ def get_joke(joke_type):
             joke_list = list(reddit.subreddit('dadjokes').search(new_type, limit=10))
         joke_id = random.choice(joke_list)
         joke = reddit.submission(id=joke_id)
-        joke_type = joke_type + ' from the subreddit {}.'.format(joke.subreddit)
+        # joke_type = joke_type + ' from the subreddit {}.'.format(joke.subreddit)
 
-        print('We found a total of {} jokes about {}.'.format(len(joke_list), joke_type))
+        # print('We found a total of {} jokes about {}.'.format(len(joke_list), joke_type))
 
         return joke.title.replace('\n','.'), joke.selftext.replace('\n','.'), joke_type
 

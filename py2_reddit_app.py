@@ -9,8 +9,8 @@ app = Flask(__name__)
 
 ask = Ask(app, "/joke_search_for_reddit")
 
-random_topics = ['grandma', 'vegetables', 'dogs',
-                 'russia', 'donald trump', 'west africa', 'leftovers']
+random_topics = ['christmas', 'new years', 'dogs',
+                 'russia', 'donald trump', 'reddit', 'chicken']
 
 logging.getLogger("flask_ask").setLevel(logging.DEBUG)
 
@@ -26,13 +26,11 @@ def tell_joke(joke_type):
         if joke_type is None:
             joke_type = random.choice(random_topics)
             jokehead, joke, joke_type = reddit_play.get_joke(joke_type)
-            joke_type = joke_type
             msg = "I couldn't understand you, so instead I'll tell you a joke about {}..... ".format(joke_type)
 
 
         else:
             jokehead, joke, joke_type = reddit_play.get_joke(joke_type)
-            joke_type = joke_type
             msg1 = 'Ok, get ready for a joke about {}..... '.format(joke_type)
             msg2 = 'All right, here is one of my favorite jokes about {}..... '.format(joke_type)
             msg3 = 'Ready or not, here comes a joke about {}..... '.format(joke_type)
@@ -40,19 +38,19 @@ def tell_joke(joke_type):
 
         msg = msg + jokehead + '...' + joke
         msg2 = msg.lower().replace('shit', 'sh-it').replace('fuck', 'fu-ck').replace('asshole', 'ass hole').replace('..', '.. ').replace('http://','').replace('https://','')
-        return statement(msg2).simple_card('Jokebox', msg)
+        return statement(msg2).simple_card('Joke Fairy', msg)
 
     except Exception as e:
-        msg = "Unfortunately I don't feel very funny today. Please try again later!"
-        return statement(msg).simple_card('Jokebox', msg)
-        print("Error!".format(e))
+        msg = "Q: Why was the blonde disappointed with her trip to England? A: She found out Big Ben was only a clock."
+        return statement(msg).simple_card('Joke Fairy', msg)
+        # print("Error!".format(e))
 
 
 @ask.intent('AMAZON.HelpIntent')
 def help():
-    speech_text = 'Jokebox is an unofficial Reddit joke search app that ' +\
+    speech_text = 'Joke fairy is an unofficial Reddit joke search app that ' +\
       'will tell you a joke about whatever you like. ' +\
-      'For example, you can ask Jokebox for a joke about Russia, ' +\
+      'For example, you can ask Joke fairy for a joke about Russia, ' +\
       'or you can ask for a pizza party joke. What kind of joke would ' +\
       'you like to hear?'
     reprompt_text = 'What kind of joke would you like?'
