@@ -7,14 +7,14 @@ def get_joke(joke_type):
         reddit = connect_to_reddit()
         if joke_type in ['funny', 'hilarious', 'good', 'great']:
             joke_type = 'something funny'
-            joke_list = list(reddit.subreddit('jokes').hot(limit=30))
+            joke_list = list(reddit.subreddit('jokes').top(limit=40))
         else:
             joke_list = list(reddit.subreddit('jokes').search(joke_type, limit=30))
 
 
         if not joke_list:
             joke_type = "something funny because I couldn't find any jokes about {}.".format(joke_type)
-            joke_list = list(reddit.subreddit('jokes').hot(limit=30))
+            joke_list = list(reddit.subreddit('jokes').top(limit=40))
 
         joke_id = random.choice(joke_list)
         joke = reddit.submission(id=joke_id)
