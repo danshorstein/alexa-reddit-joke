@@ -37,7 +37,13 @@ def tell_joke(joke_type):
             msg = random.choice([msg1, msg2, msg3])
 
         msg = msg + jokehead + '...' + joke
-        msg2 = msg.lower().replace('shit', 'sh-it').replace('fuck', 'fu-ck').replace('asshole', 'ass hole').replace('..', '.. ').replace('http://','').replace('https://','')
+        msg2 = msg.lower().replace('shit', 'sh-it').replace('fuck', 'fu-ck')\
+            .replace('asshole', 'ass hole')\
+            .replace('..', '.. ')\
+            .replace('http://','')\
+            .replace('https://','')\
+            .replace('goddamn', 'god damn')\
+            .replace('bitch', 'bit-ch')
         return statement(msg2).simple_card('Joke Fairy', msg)
 
     except Exception as e:
