@@ -6,8 +6,12 @@ def get_joke(joke_type):
     try:
         reddit = connect_to_reddit()
         if joke_type in ['funny', 'hilarious', 'good', 'great']:
-            joke_type = 'something funny'
-            joke_list = list(reddit.subreddit('jokes').top(limit=40))
+            joke_type = 'funny'
+            joke_list = list(reddit.subreddit('jokes').top(limit=50))
+
+        elif joke_type == 'dirty':
+            joke_list = list(reddit.subreddit('dirtyjokes').top(limit=50))
+            joke_type = 'something really dirty'
         else:
             joke_list = list(reddit.subreddit('jokes').search(joke_type, limit=30))
 
