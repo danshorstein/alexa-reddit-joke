@@ -24,9 +24,9 @@ def ask_joke_type():
 def tell_joke(joke_type):
     try:
         if joke_type is None:
-            joke_type = random.choice(random_topics)
+            joke_type = 'funny'
             jokehead, joke, joke_type = reddit_play.get_joke(joke_type)
-            msg = "I couldn't understand you, so instead I'll tell you a joke about {}..... ".format(joke_type)
+            msg = "I couldn't understand you, so instead I'll tell you a joke about something {}..... ".format(joke_type)
 
 
         else:
@@ -77,5 +77,5 @@ def cancel():
 
 if __name__ == '__main__':
     # print(ask_joke_type().__dict__)
-    # print(tell_joke('toilet').__dict__)
+    # print(tell_joke('funny').__dict__)
     app.run(debug=True)
