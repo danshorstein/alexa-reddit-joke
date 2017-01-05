@@ -1,0 +1,3 @@
+CLIENT_ID='YOURIDGOESHERE'
+CLIENT_SECRET = 'YOURCLIENTSECRETGOESHERE'
+USER_AGENT='amazon-alexa:Alexa Jokes:v0.0.1 (by /u/yourredditusername)'
