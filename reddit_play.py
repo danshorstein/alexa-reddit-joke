@@ -28,14 +28,18 @@ def get_joke(joke_type):
         joke_id = random.choice(joke_list)
         joke = reddit.submission(id=joke_id)
 
-        joke_title = joke.title.replace('\n','.').replace('.',' ').replace('nsfw','')
-        joke_text = joke.selftext.replace('\n','.')
+        joke_title = joke.title.replace('\n','').replace('.',' ').replace('nsfw','')
+        joke_text = joke.selftext.replace('\n','')
+
 
         if ' '.join(joke_title.split()[:-1]) in joke_text:
             joke_title = ''
 
-        if 'edit:' in joke_text.lower():
-            joke_text = joke_text.lower().split('edit:')[0]
+        edits = ['edit:', 'edit1', 'edit 1:', 'edit 1 ']
+
+        for edit in edits:
+            if edit in joke_text.lower():
+                joke_text = joke_text.lower().split(edit)[0]
 
         return joke_title, joke_text, joke_type
 
