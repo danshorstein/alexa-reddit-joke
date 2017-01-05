@@ -1,15 +1,28 @@
+JokeType tell me a joke about {russia|joke_type}
+JokeType a {christmas |joke_type} joke
+JokeType a joke about {pizza party|joke_type}
 JokeType {stuff|joke_type}
+JokeType {stuff stuff|joke_type}
 JokeType tell me a {stuff stuff|joke_type} joke
 JokeType tell me a {stuff|joke_type} joke
 JokeType {stuff|joke_type} joke
+JokeType {stuff stuff|joke_type} joke
 JokeType I want a {stuff|joke_type} joke
+JokeType I want a {stuff stuff|joke_type} joke
 JokeType for a {stuff|joke_type} joke
 JokeType for a {stuff stuff|joke_type} joke
 JokeType to tell me a {stuff|joke_type} joke
 JokeType to tell me a {stuff stuff|joke_type} joke
 JokeType to tell me a joke about {stuff|joke_type}
+JokeType to tell me a joke about {stuff stuff|joke_type}
 JokeType tell a {stuff|joke_type} joke
+JokeType tell a {stuff stuff|joke_type} joke
 JokeType tell me a joke about {stuff|joke_type}
+JokeType tell me a joke about {stuff stuff|joke_type}
 JokeType I want a joke about {stuff|joke_type}
+JokeType I want a joke about {stuff stuff|joke_type}
 JokeType I want a joke with {stuff|joke_type}
+JokeType I want a joke with {stuff stuff|joke_type}
 JokeType tell me a joke with {stuff|joke_type}
+JokeType tell me a joke with {stuff stuff|joke_type}
+JokeType {stuff|joke_type}
