@@ -28,8 +28,12 @@ def get_joke(joke_type):
         joke_id = random.choice(joke_list)
         joke = reddit.submission(id=joke_id)
 
-        joke_title = joke.title.replace('\n','').replace('.',' ').replace('nsfw','')
-        joke_text = joke.selftext.replace('\n','')
+        while len(joke.selftext) > 2500:
+            joke_id = random.choice(joke_list)
+            joke = reddit.submission(id=joke_id)
+
+        joke_title = joke.title.replace(r'\n','').replace('.',' ').replace('nsfw','')
+        joke_text = joke.selftext.replace(r'\n','')
 
 
         if ' '.join(joke_title.split()[:-1]) in joke_text:
