@@ -3,6 +3,7 @@ reddit3
 templates
 reddit
 *.pyc
+.idea
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
