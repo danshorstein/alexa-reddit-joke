@@ -1,7 +1,8 @@
-import praw
 import random
 
-from joke_fairy.reddit_login.passwords import CLIENT_ID, CLIENT_SECRET, USER_AGENT
+import praw
+
+from joke_fairy.joke_data_maintenance.reddit_login.passwords import CLIENT_ID, CLIENT_SECRET, USER_AGENT
 
 
 def get_joke(joke_type):

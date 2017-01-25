@@ -3,5 +3,6 @@ requires =[
     'praw',
     'tinydb',
     'flask',
-    'flask-ask'
+    'flask-ask',
+    'nltk'
 ]

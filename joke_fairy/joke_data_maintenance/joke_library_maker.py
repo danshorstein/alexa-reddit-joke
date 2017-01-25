@@ -1,11 +1,12 @@
 import os
-import praw
 import random
 from collections import namedtuple
 from datetime import datetime
+
+import praw
 from tinydb import TinyDB, Query
 
-from reddit_login.passwords import CLIENT_ID, CLIENT_SECRET, USER_AGENT
+from joke_fairy.joke_data_maintenance.reddit_login.passwords import CLIENT_ID, CLIENT_SECRET, USER_AGENT
 
 # This file downloads a large amount of jokes from reddit, and stores them in a joke JSON file.
 # If the JSON file already exists, this will compare to what's in there and only add jokes if they
