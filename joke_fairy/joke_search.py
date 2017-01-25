@@ -1,9 +1,9 @@
 from tinydb import Query
 import random
 import re
-from joke_fairy.word_stem import stem_search_terms
-from joke_fairy.common_words import remove_common_words
-from joke_fairy.open_tiny_joke_db import open_jokes_database
+from word_stem import stem_search_terms
+from common_words import remove_common_words
+from open_tiny_joke_db import open_jokes_database
 
 Joke = Query()
 

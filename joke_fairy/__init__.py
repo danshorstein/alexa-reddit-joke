@@ -2,9 +2,9 @@ import logging
 import random
 from flask import Flask
 from flask_ask import Ask, statement, question, session
-import joke_fairy.joke_search as joke_search
-from joke_fairy.open_tiny_joke_db import open_jokes_database
-from joke_fairy.clean_up_text import cleanup
+import joke_search
+from open_tiny_joke_db import open_jokes_database
+from clean_up_text import cleanup
 
 db = open_jokes_database()
 
