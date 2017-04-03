@@ -32,7 +32,7 @@ def get_joke(joke_type):
             joke_id = random.choice(joke_list)
             joke = reddit.submission(id=joke_id)
 
-        joke_title = joke.title.replace(r'\n','').replace('.',' ').replace('nsfw','')
+        joke_title = joke.title.replace(r'\n','').replace('.',' ')
         joke_text = joke.selftext.replace(r'\n','')
 
 
